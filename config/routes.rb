@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   post'/auto_login',to:"auth#autologin"
   post'/transaction/create',to:"transaction#create"
   post'/register', to:"user#create"
+  get'/get_stock/:ticker',to:"stock#get_stock"
   delete'/sell',to:"transaction#sell"
 end

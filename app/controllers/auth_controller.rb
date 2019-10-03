@@ -23,8 +23,11 @@ class AuthController < ApplicationController
             resp = RestClient.get("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=#{stock.ticker_symbol}&apikey=60A52VC1JPUTDL0G")
             resp_json = JSON.parse(resp)
             good_stuff = resp_json["Global Quote"]
-            byebug
+            # check if i get rate limited
+            if resp_json["Note"]
+            else
             stock.update(open:good_stuff["02. open"],current:good_stuff["05. price"])
+            end
         end
     end
   

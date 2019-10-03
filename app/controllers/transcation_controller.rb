@@ -18,19 +18,6 @@ class TranscationController < ApplicationController
         render json: user.transactions
     end 
 
-    def create_stock
-        require'rest-client'
-        resp = RestClient.get(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=#{params["Ticker"]}apikey=60A52VC1JPUTDL0G`)
-        resp_json = JSON.parse(resp)
-        good_stuff = resp_json["Global Quote"]
-
-        resp2 = RestClient.get(`https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=#{params["Ticker"]}&apikey=60A52VC1JPUTDL0G`)
-        good_stuff2 = resp2["best matches"][0]
-
-        stock = Stock.new(symbol:good_stuff["01. symbol"],open:goodstuff["02. open"],current:goodstuff["05. price"],name:good_stuff2["2. name"])
-        return stock
-    end
-
     def sell
         user = User.find_by(id:params["UserID"])
         stock = Stock.find_by(ticker_symbol:params["TickerSymbol"])
