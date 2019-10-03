@@ -44,5 +44,17 @@ class ApplicationController < ActionController::API
     return stock
     end
   end
+
+  def create_transaction_arr(transactions)
+    transactions.map do |trans|
+     TransactionSerializer.new(trans)
+    end
+ end
+
+ def create_stock_arr(stocks)
+     stocks.map do |stock|
+       UserStockSerializer.new(stock)
+   end
+ end
   
   end

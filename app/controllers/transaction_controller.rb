@@ -12,8 +12,8 @@ class TransactionController < ApplicationController
         if trans.save 
             render json: {
                 balance: user.balance,
-                transactions:user.transactions,
-                stocks: user.user_stocks
+                transactions: create_transaction_arr(user.transactions),
+                stocks: create_stock_arr(user.user_stocks)
             }
         else
             render json:{

@@ -10,7 +10,6 @@ class UserController < ApplicationController
       if user.save
         token = encode_token(user)
         render json: {
-          id: user.id,
           username:user.username,
           balance: user.balance,
           transactions: user.transactions,
