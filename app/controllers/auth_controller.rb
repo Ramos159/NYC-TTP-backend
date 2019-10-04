@@ -4,7 +4,12 @@ class AuthController < ApplicationController
       update_stock
       user = User.find_by(email: params["email"])
       if user && user.authenticate(params["password"])
-        render json: user
+        render json: {
+          username:user.username,
+          balance: user.balance,
+          transactions: create_transaction_arr(user.transactions),
+          stocks: create_stock_arr(user.user_stocks),
+        }
       else
         render json: {errors: "You entered wrong username or password!"}
       end

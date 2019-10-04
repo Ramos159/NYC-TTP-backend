@@ -46,8 +46,8 @@ class ApplicationController < ActionController::API
   end
 
   def create_transaction_arr(transactions)
-    transactions.map do |trans|
-     TransactionSerializer.new(trans)
+      transactions.map do |trans|
+        TransactionSerializer.new(trans)
     end
  end
 
