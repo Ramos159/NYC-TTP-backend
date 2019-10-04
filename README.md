@@ -1,4 +1,4 @@
-# OscarHealth Apprenticeship Fullstack Assignment Backend
+# Oscar Health Apprenticeship Fullstack Assignment Backend
 
 ## Info
 * Built with Ruby 2.6.1p33 and Rails 5.2.3
