@@ -8,7 +8,7 @@
 * Model Validations for Users and Stocks 
 * PostgresQL DB (was used really to try to use heroku, but works just fine)
 
-## Instructions
+## Instructions (this assumes ruby and bundler installed)
 1. clone and cd into the project
 2. run bundle install
 3. run rails db:setup
