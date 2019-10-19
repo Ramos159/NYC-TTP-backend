@@ -6,7 +6,8 @@
 * Intergrates multiple Alpha Vantage Stock API's
 * Fully Functioning Authentication with JWT and BCrypt
 * Model Validations for Users and Stocks 
-* PostgresQL DB 
+* PostgresQL DB
+
 
 ## This is already hosted and deployed via heroku, ready to be used with the front end
 
